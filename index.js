@@ -36,7 +36,7 @@ let frameOn = 0;
 function doFrame(){
     frameOn++;
    // ctx.fillStyle = '#cc6600';
-    if(myId>1){
+    if(myId>0.1){
         ctx.fillStyle = '#000000';
       //  ctx.fillStyle = '#cc6600';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -59,7 +59,7 @@ function doFrame(){
       //  myId = Math.random();
 
         setTimeout(function() {
-            location.reload();
+            location.reload(true);
         }, 1200);
 
         lastChangeTime = currentTimeUTC;
