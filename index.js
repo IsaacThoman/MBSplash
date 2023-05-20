@@ -16,6 +16,7 @@ window.addEventListener('resize', resizeCanvas);
 //create const img from image.png
 const img = new Image();
 img.src = 'image.png';
+let lastChangeTime = 0;
 
 function doFrame(){
    // ctx.fillStyle = '#cc6600';
@@ -31,8 +32,9 @@ function doFrame(){
     }
 
     let currentTimeUTC = Math.round(new Date().getTime()/1000);
-    if(currentTimeUTC%(60*5) == 0){
+    if(currentTimeUTC%(5*60) == 0 && currentTimeUTC != lastChangeTime){
         myId = Math.random();
+        lastChangeTime = currentTimeUTC;
     }
 
     requestAnimationFrame(doFrame);
