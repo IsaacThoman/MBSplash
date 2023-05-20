@@ -36,12 +36,12 @@ let frameOn = 0;
 function doFrame(){
     frameOn++;
    // ctx.fillStyle = '#cc6600';
-    if(myId>0.0){
-      //  ctx.fillStyle = '#000000';
-        ctx.fillStyle = '#cc6600';
+    if(myId>0.15){
+        ctx.fillStyle = '#000000';
+      //  ctx.fillStyle = '#cc6600';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         let freeYSpace = canvas.width*9/16 - canvas.height;
-     //   ctx.drawImage(img, 0, -freeYSpace/2, canvas.width, canvas.width*9/16);
+        ctx.drawImage(img, 0, -freeYSpace/2, canvas.width, canvas.width*9/16);
 
 
     }
