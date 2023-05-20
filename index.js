@@ -22,7 +22,7 @@ let images = [];
 
 for(let i = 0; i < 34; i++) {
     let img = new Image();
-    img.src = "/fish2/fish" + (i+1) + ".webp";
+    img.src = "fish2/fish" + (i+1) + ".webp";
     img.onload = function() {
         console.log('Image loaded: ' + this.src);
     };
