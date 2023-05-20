@@ -20,7 +20,7 @@ let lastChangeTime = 0;
 
 function doFrame(){
    // ctx.fillStyle = '#cc6600';
-    if(myId>0.5){
+    if(myId>0){
         ctx.fillStyle = '#000000';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         let freeYSpace = canvas.width*9/16 - canvas.height;
@@ -32,12 +32,12 @@ function doFrame(){
     }
 
     let currentTimeUTC = Math.round(new Date().getTime()/1000);
-    if(currentTimeUTC%(10) == 0 && currentTimeUTC != lastChangeTime){
+    if(currentTimeUTC%(60) == 0 && currentTimeUTC != lastChangeTime){
       //  myId = Math.random();
 
         setTimeout(function() {
             location.reload();
-        }, 1500);
+        }, 1200);
 
         lastChangeTime = currentTimeUTC;
     }
