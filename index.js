@@ -36,7 +36,7 @@ let frameOn = 0;
 function doFrame(){
     frameOn++;
    // ctx.fillStyle = '#cc6600';
-    if(myId>0){
+    if(myId>0.1){
         ctx.fillStyle = '#000000';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         let freeYSpace = canvas.width*9/16 - canvas.height;
