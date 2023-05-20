@@ -6,6 +6,7 @@ function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 }
+let myId = Math.random();
 
 // Call the function initially
 resizeCanvas();
@@ -18,10 +19,22 @@ img.src = 'image.png';
 
 function doFrame(){
    // ctx.fillStyle = '#cc6600';
-    ctx.fillStyle = '#000000';
-ctx.fillRect(0, 0, canvas.width, canvas.height);
-let freeYSpace = canvas.width*9/16 - canvas.height;
-ctx.drawImage(img, 0, -freeYSpace/2, canvas.width, canvas.width*9/16);
+    if(myId>0.5){
+        ctx.fillStyle = '#000000';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        let freeYSpace = canvas.width*9/16 - canvas.height;
+        ctx.drawImage(img, 0, -freeYSpace/2, canvas.width, canvas.width*9/16);
+    }
+    else{
+        ctx.fillStyle = '#cc6600';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+
+    let currentTimeUTC = Math.round(new Date().getTime()/1000);
+    if(currentTimeUTC%(60*5) == 0){
+        myId = Math.random();
+    }
+
     requestAnimationFrame(doFrame);
 }
 requestAnimationFrame(doFrame);
