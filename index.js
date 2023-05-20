@@ -32,8 +32,13 @@ function doFrame(){
     }
 
     let currentTimeUTC = Math.round(new Date().getTime()/1000);
-    if(currentTimeUTC%(5*60) == 0 && currentTimeUTC != lastChangeTime){
-        myId = Math.random();
+    if(currentTimeUTC%(10) == 0 && currentTimeUTC != lastChangeTime){
+      //  myId = Math.random();
+
+        setTimeout(function() {
+            location.reload();
+        }, 1500);
+
         lastChangeTime = currentTimeUTC;
     }
 
